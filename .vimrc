@@ -31,6 +31,9 @@ Plugin 'tpope/vim-fugitive'
 " vim-commentary
 Plugin 'tpope/vim-commentary'
 
+" some nice icons
+Plugin 'ryanoasis/vim-devicons'
+
 " vim-localvimrc
 Plugin 'embear/vim-localvimrc'
 
