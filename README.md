@@ -18,21 +18,19 @@ I completely rewrote my vimrc by hand because my last one was borrowed and used 
 + `,nt` open the NERDTree tab
 + `gcc` toggle comment on the current line
 
-## Included plugins
+## Some included plugins
 
++ [Bazel](https://github.com/bazelbuild/vim-bazel) with [maktaba](https://github.com/google/vim-maktaba)
+  + Bazel support with required vimscript dependency
 + [delimitMate](https://github.com/Raimondi/delimitMate)
 + [emmet-vim](https://github.com/mattn/emmet-vim)
++ [FZF](https://github.com/junegunn/fzf.vim)
+  + <Ctrl-f> to fuzzy find all the things in your current directory.
 + [GitGutter](https://github.com/airblade/vim-gitgutter)
 + [Multiple Cursors](https://github.com/terryma/vim-multiple-cursors)
   + Remapped to `<C-m>` to not conflict with YankRing
-+ [NERDTree](https://github.com/scrooloose/nerdtree)
 + [nerdtree-git-plugin](https://github.com/Xuyuanp/nerdtree-git-plugin)
-+ [Syntastic syntax checkers](https://github.com/scrooloose/syntastic)
-  + Included linters
-    + eslint: be sure to run `npm install -g eslint`. 
-    + **Note** you can install more syntax checkers yourself. Check the syntastic [wiki](https://github.com/scrooloose/syntastic/wiki/Syntax-Checkers) for a list.
-+ [tern_for_vim](https://github.com/marijnh/tern_for_vim)
-  + [Tern](http://ternjs.net/)-based, intelligent editing support for JavaScript. 
++ [NERDTree](https://github.com/scrooloose/nerdtree)
 + [Ultisnips](https://github.com/SirVer/ultisnips)
   + [Supertab](https://github.com/ervandew/supertab) is used to help YCM and Ultisnips play nice together. The tab key should act intelligently when scrolling through the completion list, or expanding a snippet.
 + [vim-airline](https://github.com/bling/vim-airline)
@@ -49,7 +47,4 @@ I completely rewrote my vimrc by hand because my last one was borrowed and used 
 + [vim-repeat](https://github.com/tpope/vim-repeat)
 + [vim-sensible](https://github.com/tpope/vim-sensible)
 + [vim-surround](https://github.com/tpope/vim-surround)
-+ [vim-unimpaired](https://github.com/tpope/vim-unimpaired)
-+ [YankRing.vim](https://github.com/vim-scripts/YankRing.vim)
-  + `<F10>` displays the content of the YankRing (press `p` to paste selection from the list)
 + [YouCompleteMe](https://github.com/Valloric/YouCompleteMe)
