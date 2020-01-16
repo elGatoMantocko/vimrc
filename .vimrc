@@ -9,21 +9,24 @@ filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin('~/.vim/bundle')
 
-" highlight Plugin block then ex :'<,'>!sort -f
+" highlight Plugin block then ex :'<,'>!sort -i
 Plugin 'airblade/vim-gitgutter'           " Add git gutter to note diffs inline
+Plugin 'bazelbuild/vim-bazel'             " bazel support for vim
 Plugin 'editorconfig/editorconfig-vim'    " editorconfig
 Plugin 'ervandew/supertab'                " Supertab to get Ultisnips and YCM to play nice
 Plugin 'flazz/vim-colorschemes'           " Color schemes!
+Plugin 'google/vim-maktaba'               " google vimscript plugin
+Plugin 'HerringtonDarkholme/yats.vim'     " more typescript syntax highlighting and more
 Plugin 'honza/vim-snippets'               " Lots of snippets for lots of languages
 Plugin 'junegunn/fzf'                     " vim fuzzy finder
 Plugin 'junegunn/fzf.vim'
+Plugin 'leafgarland/typescript-vim'       " typescript syntax highlighting
 Plugin 'mattn/emmet-vim'                  " Emmet-vim for super fast HTML editing
 Plugin 'mustache/vim-mustache-handlebars' " mustache/handlebars
 Plugin 'pangloss/vim-javascript'          " javascript syntax highlighting
 Plugin 'Raimondi/delimitMate'             " delimitMate for auto closing of parens, brackets, etc
 Plugin 'scrooloose/nerdtree'              " Add NerdTree to visualize directories
 Plugin 'SirVer/ultisnips'                 " Ultisnips snippet engine
-Plugin 'ternjs/tern_for_vim'              " Tern-based JavaScript intelligent editing support
 Plugin 'terryma/vim-multiple-cursors'     " Multiple cursors
 Plugin 'tpope/vim-characterize'           " Unicode character metadata
 Plugin 'tpope/vim-commentary'             " vim-commentary
@@ -175,12 +178,11 @@ set t_Co=256
 syntax enable
 
 " Set the color scheme for airline and the tui
-let g:airline_solarized_bg='light'
-let g:airline_theme='sol'
+let g:airline_theme='lucius'
 
-set background=light
+set background=dark
 let g:solarized_termcolors=256
-colorscheme solarized
+colorscheme lucius
 
 " Use the vim wildmenu for command completion
 set wildmenu
@@ -261,10 +263,9 @@ nmap ]g :tabnext<return>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " ale
 "
-let g:ale_linters = {
-\   'javascript': ['eslint'],
-\   'css': ['stylelint'],
-\}
+let g:ale_linters = { 'javascript': ['eslint'], 'typescript': ['eslint'] }
+let g:ale_fixers = { 'javascript': ['eslint'], 'typescript': ['eslint'] }
+let g:ale_fix_on_save = 1
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -299,9 +300,8 @@ let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
 let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
 let g:SuperTabDefaultCompletionType = '<C-n>'
 
-let g:ycm_path_to_python_interpreter = '/usr/local/bin/python3'
-
-autocmd FileType javascript setlocal omnifunc=tern#Complete
+" change this to your preferred python path
+let g:ycm_path_to_python_interpreter = '/usr/bin/python3'
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -310,7 +310,7 @@ autocmd FileType javascript setlocal omnifunc=tern#Complete
 " Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<tab>"
-let g:UltiSnipsJumpBackwardTrigger="<s-tab>""
+let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 let g:UltiSnipsEditSplit="vertical"
 
 
